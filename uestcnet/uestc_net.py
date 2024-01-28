@@ -1,8 +1,8 @@
 import requests, re, json
 import logging
-from util.hmd5 import *
-from util.xEncode import *
-from util.ct_base64 import *
+from .util.hmd5 import *
+from .util.xEncode import *
+from .util.ct_base64 import *
 
 logging.basicConfig(format="%(asctime)s |%(filename)s:%(lineno)s| - %(levelname)s: %(message)s",
                         datefmt="%Y-%m-%d %H:%M:%S", level=logging.INFO)
@@ -144,3 +144,8 @@ class UestcNetManager:
             logging.error(f"Login fail, exception: {e}")
             return False
 
+
+if __name__ == '__main__':
+    u = UestcNetManager()
+    # print(u.get_assigned_ip())
+    u.login(username='************', password='**********')
